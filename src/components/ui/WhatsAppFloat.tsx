@@ -27,7 +27,7 @@ export default function WhatsAppFloat() {
       }`}
     >
       <a
-        href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Vazha%20Wellness"
+        href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Stem Native%20Wellness"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-3 px-5 py-3.5 bg-[#25D366] text-white rounded-2xl shadow-2xl hover:shadow-green-900/20 hover:-translate-y-1 transition-all group"

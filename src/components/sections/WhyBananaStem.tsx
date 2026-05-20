@@ -7,7 +7,7 @@ const timeline = [
   {
     era: "2000 BCE",
     title: "Roots in Ayurveda",
-    body: "Siddha and Ayurvedic texts documented Vazhaithandu as a premier medicinal food for kidney health, urinary wellness, and digestive balance. Revered as 'nature's filter'.",
+    body: "Siddha and Ayurvedic texts documented Stem Nativeithandu as a premier medicinal food for kidney health, urinary wellness, and digestive balance. Revered as 'nature's filter'.",
   },
   {
     era: "Traditional Era",
@@ -22,7 +22,7 @@ const timeline = [
   {
     era: "Today",
     title: "We Solved It",
-    body: "Vazha Wellness does the cleaning, trimming, and prep for you. Ready-to-cook. Farm-fresh. Delivered to your home in Bangalore, Pune, and Mumbai. Tradition preserved. Convenience delivered.",
+    body: "Stem Native does the cleaning, trimming, and prep for you. Ready-to-cook. Farm-fresh. Delivered to your home in Bangalore, Pune, and Mumbai. Tradition preserved. Convenience delivered.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function WhyBananaStem() {
             <span style={{ color: "#4A7A50" }}>Because Your Ancestors Knew.</span>
           </h2>
           <p className="text-body-lg" style={{ color: "#6B7280" }}>
-            Vazhaithandu isn&apos;t a trend. It&apos;s a 4,000-year-old healing food that modern 
+            Stem Nativeithandu isn&apos;t a trend. It&apos;s a 4,000-year-old healing food that modern 
             nutrition science is just beginning to catch up to.
           </p>
         </div>

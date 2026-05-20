@@ -17,13 +17,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Vazha Wellness — Fresh Banana Stem Delivered | Vazhaithandu Online",
+  title: "Stem Native — Fresh Banana Stem Delivered | Stem Nativeithandu Online",
   description:
-    "India's premium fresh banana stem (Vazhaithandu) brand. Ready-to-cook, farm-fresh, cleaned banana stem packs delivered to your door in Bangalore, Pune & Mumbai. Gut health. Detox. Traditional Indian wellness.",
+    "India's premium fresh banana stem (Stem Nativeithandu) brand. Ready-to-cook, farm-fresh, cleaned banana stem packs delivered to your door in Bangalore, Pune & Mumbai. Gut health. Detox. Traditional Indian wellness.",
   keywords: [
     "banana stem online",
     "banana stem Bangalore",
-    "vazhaithandu delivery",
+    "Stem Nativeithandu delivery",
     "banana stem juice",
     "detox foods India",
     "traditional Indian superfoods",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "organic banana stem",
   ],
   openGraph: {
-    title: "Vazha Wellness — India's Forgotten Superfood, Delivered Fresh",
+    title: "Stem Native — India's Forgotten Superfood, Delivered Fresh",
     description:
       "Ready-to-cook banana stem packs. Farm fresh. Cleaned and delivered. Start your daily detox.",
     type: "website",

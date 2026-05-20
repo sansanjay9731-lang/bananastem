@@ -77,7 +77,7 @@ export default function InstagramFeed() {
             }}
           >
             <Camera size={16} />
-            @vazha.wellness
+            @Stem Native.wellness
           </a>
         </div>
 
@@ -131,7 +131,7 @@ export default function InstagramFeed() {
           <p className="text-sm mb-3" style={{ color: "#9CA3AF" }}>
             Tag us in your banana stem creations for a chance to be featured
           </p>
-          <span className="font-semibold text-sm" style={{ color: "#4A7A50" }}>#VazhaWellness #BananaStemDetox #Vazhaithandu</span>
+          <span className="font-semibold text-sm" style={{ color: "#4A7A50" }}>#Stem NativeWellness #BananaStemDetox #Stem Nativeithandu</span>
         </div>
       </div>
     </section>

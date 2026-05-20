@@ -20,7 +20,7 @@ const benefits = [
     title: "Deep Detox",
     tagline: "Flush out what you don't need",
     description:
-      "Acts as a natural diuretic, flushing toxins and kidney stones. Traditional Ayurveda has recommended Vazhaithandu for detox for centuries.",
+      "Acts as a natural diuretic, flushing toxins and kidney stones. Traditional Ayurveda has recommended Stem Nativeithandu for detox for centuries.",
   },
   {
     icon: Zap,
@@ -38,7 +38,7 @@ const benefits = [
     title: "Traditional Wellness",
     tagline: "5000 years of Ayurvedic wisdom",
     description:
-      "Used in South Indian households for generations. Vazhaithandu has deep roots in Siddha medicine for kidney health, weight management, and vitality.",
+      "Used in South Indian households for generations. Stem Nativeithandu has deep roots in Siddha medicine for kidney health, weight management, and vitality.",
   },
   {
     icon: Clock,

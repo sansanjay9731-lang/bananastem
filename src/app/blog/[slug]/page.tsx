@@ -37,7 +37,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <div className="flex items-center justify-center gap-4 text-sm" style={{ color: "#6B7280" }}>
               <span style={{ color: "#C9A84C" }}>{blog.date}</span>
               <span>•</span>
-              <span>By Vazha Wellness</span>
+              <span>By Stem Native</span>
             </div>
           </header>
 

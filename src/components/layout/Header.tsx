@@ -40,7 +40,7 @@ export default function Header() {
           </div>
           <div>
             <span className="font-semibold tracking-tight text-lg" style={{ color: "#2D5A35" }}>
-              Vazha
+              Stem Native
             </span>
             <span className="text-label text-xs block leading-none" style={{ color: "#7A9E7E" }}>
               Wellness

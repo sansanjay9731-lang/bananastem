@@ -39,7 +39,7 @@ export default function Footer() {
                 <Leaf size={18} className="text-white" />
               </div>
               <div>
-                <span className="font-semibold text-xl text-white">Vazha</span>
+                <span className="font-semibold text-xl text-white">Stem Native</span>
                 <span className="text-label text-xs block leading-none" style={{ color: "#A8C5AC" }}>Wellness</span>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function Footer() {
       <div style={{ borderTop: "1px solid rgba(168,197,172,0.15)" }}>
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ color: "#7A9E7E", fontSize: "0.8rem" }}>
-            © 2024 Vazha Wellness. All rights reserved.
+            © 2024 Stem Native. All rights reserved.
           </p>
           <p style={{ color: "#7A9E7E", fontSize: "0.8rem" }}>
             Farm Fresh · Chemical Free · Tradition Preserved

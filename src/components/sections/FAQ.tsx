@@ -139,7 +139,7 @@ export default function FAQ() {
             Our team is available on WhatsApp from 7 AM to 9 PM, 7 days a week.
           </p>
           <a
-            href="https://wa.me/919999999999?text=Hi%2C%20I%20have%20a%20question%20about%20Vazha%20Wellness"
+            href="https://wa.me/919999999999?text=Hi%2C%20I%20have%20a%20question%20about%20Stem Native%20Wellness"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"

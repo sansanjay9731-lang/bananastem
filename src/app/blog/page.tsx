@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Blog & Recipes | Vazha Wellness",
+  title: "Blog & Recipes | Stem Native",
   description: "Learn about the ancient Ayurvedic benefits of banana stem, read detox guides, and explore traditional South Indian recipes.",
 };
 

@@ -77,7 +77,7 @@ export default function FinalCTA() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a
-            href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20fresh%20banana%20stem%20from%20Vazha%20Wellness"
+            href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20fresh%20banana%20stem%20from%20Stem Native%20Wellness"
             target="_blank"
             rel="noopener noreferrer"
             id="final-whatsapp-cta"

@@ -179,7 +179,7 @@ export default function Hero() {
               >
                 <Image
                   src="/hero.png"
-                  alt="Fresh cleaned banana stem (Vazhaithandu) — premium wellness food"
+                  alt="Fresh cleaned banana stem (Stem Nativeithandu) — premium wellness food"
                   width={480}
                   height={480}
                   className="w-full h-auto"

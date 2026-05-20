@@ -5,12 +5,13 @@ import Link from "next/link";
 import { Menu, X, Leaf } from "lucide-react";
 
 const navLinks = [
-  { label: "Benefits", href: "#benefits" },
-  { label: "Products", href: "#products" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Subscribe", href: "#subscription" },
-  { label: "Recipes", href: "#recipes" },
-  { label: "FAQs", href: "#faq" },
+  { label: "Benefits", href: "/#benefits" },
+  { label: "Products", href: "/#products" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Subscribe", href: "/#subscription" },
+  { label: "Recipes", href: "/#recipes" },
+  { label: "Blog", href: "/blog" },
+  { label: "FAQs", href: "/#faq" },
 ];
 
 export default function Header() {

@@ -6,16 +6,17 @@ import { Leaf, Camera, MapPin, Phone } from "lucide-react";
 
 const footerLinks = {
   Products: [
-    { label: "500g Fresh Pack", href: "#products" },
-    { label: "1kg Family Pack", href: "#products" },
-    { label: "Juice Ready Pack", href: "#products" },
-    { label: "Weekly Subscription", href: "#subscription" },
+    { label: "500g Fresh Pack", href: "/products/pack-500g" },
+    { label: "1kg Family Pack", href: "/products/pack-1kg" },
+    { label: "Juice Ready Pack", href: "/products/juice-pack" },
+    { label: "Weekly Subscription", href: "/products/weekly-sub" },
   ],
   Learn: [
-    { label: "Why Banana Stem?", href: "#why-banana-stem" },
-    { label: "Health Benefits", href: "#benefits" },
-    { label: "Recipes", href: "#recipes" },
-    { label: "FAQs", href: "#faq" },
+    { label: "Why Banana Stem?", href: "/#why-banana-stem" },
+    { label: "Health Benefits", href: "/#benefits" },
+    { label: "Recipes", href: "/#recipes" },
+    { label: "Journal & Blog", href: "/blog" },
+    { label: "FAQs", href: "/#faq" },
   ],
   Connect: [
     { label: "Order on WhatsApp", href: "https://wa.me/919999999999" },

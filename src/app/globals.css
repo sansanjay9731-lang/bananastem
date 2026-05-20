@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 /* =====================================================
-   VAZHA WELLNESS — PREMIUM DESIGN SYSTEM
+   STEM NATIVE — PREMIUM BRAND DESIGN SYSTEM
+   "Rooted In Wellness."
    ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    /* Brand Colors */
-    --color-cream: #FDFAF5;
-    --color-cream-dark: #F5F0E8;
-    --color-sage: #7A9E7E;
-    --color-sage-light: #A8C5AC;
-    --color-sage-dark: #4A7A50;
-    --color-forest: #2D5A35;
-    --color-forest-dark: #1A3A20;
-    --color-earth: #8B6E4E;
-    --color-earth-light: #C4A882;
-    --color-gold: #C9A84C;
-    --color-gold-light: #E8D5A3;
-    --color-charcoal: #2C2C2C;
-    --color-muted: #6B7280;
+    /* ——— STEM NATIVE Brand Colors ——— */
+    --botanical-green: #5E7A63;
+    --botanical-green-dark: #3D5241;
+    --botanical-green-light: #7A9880;
+    --warm-ivory: #F7F4EE;
+    --warm-ivory-dark: #EDE9E0;
+    --earth-beige: #D9C7AE;
+    --earth-beige-dark: #C4AA8A;
+    --charcoal: #1F1F1F;
+    --charcoal-soft: #3A3A3A;
+    --sage-mist: #AFC3B0;
+    --soft-stone: #E8E4DC;
+    --natural-clay: #C79A72;
+    --natural-clay-dark: #A87B56;
+    --muted-text: #7A7A72;
 
-    /* Background */
-    --background: #FDFAF5;
-    --foreground: #2C2C2C;
-
-    /* Spacing */
-    --section-padding: 6rem 0;
+    --background: #F7F4EE;
+    --foreground: #1F1F1F;
   }
 
   * {
@@ -44,272 +44,310 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
-    line-height: 1.6;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    line-height: 1.65;
   }
 
-  /* Selection */
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+  }
+
   ::selection {
-    background: #A8C5AC;
-    color: #1A3A20;
+    background: #AFC3B0;
+    color: #1F1F1F;
   }
 
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #F5F0E8;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #7A9E7E;
-    border-radius: 3px;
-  }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #EDE9E0; }
+  ::-webkit-scrollbar-thumb { background: #AFC3B0; border-radius: 3px; }
 }
 
+/* =====================================================
+   TYPOGRAPHY UTILITIES
+   ===================================================== */
+
 @layer utilities {
-  /* Gradient utilities */
-  .gradient-sage {
-    background: linear-gradient(135deg, #7A9E7E 0%, #4A7A50 100%);
-  }
+  /* Display — Cormorant Garamond, editorial luxury */
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
 
-  .gradient-cream {
-    background: linear-gradient(180deg, #FDFAF5 0%, #F5F0E8 100%);
-  }
-
-  .gradient-forest {
-    background: linear-gradient(135deg, #2D5A35 0%, #1A3A20 100%);
-  }
-
-  .gradient-earth {
-    background: linear-gradient(135deg, #C4A882 0%, #8B6E4E 100%);
-  }
-
-  .gradient-hero {
-    background: linear-gradient(160deg, #FDFAF5 0%, #EDF4EE 40%, #D4E8D6 100%);
-  }
-
-  /* Glassmorphism */
-  .glass {
-    background: rgba(253, 250, 245, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(168, 197, 172, 0.3);
-  }
-
-  .glass-dark {
-    background: rgba(45, 90, 53, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(122, 158, 126, 0.3);
-  }
-
-  /* Typography */
   .text-display {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
     font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    font-style: italic;
   }
 
   .text-headline {
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
     font-weight: 300;
     letter-spacing: -0.01em;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
   .text-title {
-    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
     font-weight: 400;
     line-height: 1.3;
   }
 
   .text-body-lg {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    line-height: 1.8;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
     font-weight: 300;
+    line-height: 1.85;
+    color: var(--muted-text);
   }
 
   .text-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
   }
 
-  /* Organic texture overlay */
-  .texture-overlay {
-    position: relative;
-  }
-  .texture-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    opacity: 0.4;
+  .text-caption {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--muted-text);
   }
 
-  /* Card hover */
-  .card-hover {
+  /* =====================================================
+     GRADIENT UTILITIES
+     ===================================================== */
+
+  .gradient-green    { background: linear-gradient(135deg, #5E7A63, #3D5241); }
+  .gradient-ivory    { background: linear-gradient(180deg, #F7F4EE, #EDE9E0); }
+  .gradient-hero     { background: linear-gradient(160deg, #F7F4EE 0%, #EDE9E0 50%, #DFD8CC 100%); }
+  .gradient-sage     { background: linear-gradient(135deg, #AFC3B0, #7A9880); }
+  .gradient-clay     { background: linear-gradient(135deg, #C79A72, #A87B56); }
+  .gradient-dark     { background: linear-gradient(160deg, #1F1F1F, #2D2D2A); }
+
+  /* =====================================================
+     GLASSMORPHISM
+     ===================================================== */
+
+  .glass {
+    background: rgba(247, 244, 238, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(217, 199, 174, 0.4);
+  }
+
+  .glass-dark {
+    background: rgba(31, 31, 31, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(94, 122, 99, 0.25);
+  }
+
+  /* =====================================================
+     CARD EFFECTS
+     ===================================================== */
+
+  .card-lift {
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 64px rgba(94, 122, 99, 0.14);
+  }
+
+  .card-scale {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .card-hover:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(74, 122, 80, 0.15);
+  .card-scale:hover {
+    transform: scale(1.02);
   }
 
-  /* Line accent */
-  .accent-line {
-    display: inline-block;
-    width: 40px;
-    height: 2px;
-    background: #7A9E7E;
-    border-radius: 2px;
+  /* =====================================================
+     SECTION LAYOUT
+     ===================================================== */
+
+  .section-base    { padding: 5rem 0; }
+  .section-lg      { padding: 7rem 0; }
+  .container-xl    { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+  /* =====================================================
+     DECORATIVE ELEMENTS
+     ===================================================== */
+
+  .divider-botanical {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--sage-mist);
+  }
+  .divider-botanical::before,
+  .divider-botanical::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--earth-beige), transparent);
   }
 
-  /* Section base */
-  .section-base {
-    padding: 5rem 0;
-  }
+  /* =====================================================
+     BRAND TEXTURES
+     ===================================================== */
 
-  /* WhatsApp color */
-  .bg-whatsapp {
-    background: #25D366;
-  }
-  .bg-whatsapp:hover {
-    background: #128C7E;
+  .texture-paper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   }
 }
 
 /* =====================================================
-   ANIMATIONS
+   ANIMATION SYSTEM
    ===================================================== */
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(0.5deg); }
+  66%       { transform: translateY(-4px) rotate(-0.5deg); }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes shimmer-soft {
+  0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 
-@keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(122, 158, 126, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(122, 158, 126, 0); }
+@keyframes pulse-whatsapp {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50%       { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes draw-line {
+  from { width: 0; }
+  to   { width: 100%; }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-pulse-green {
-  animation: pulse-green 2s infinite;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.animate-marquee {
-  animation: marquee 25s linear infinite;
-}
+.animate-float       { animation: float-gentle 7s ease-in-out infinite; }
+.animate-fade-up     { animation: fade-up 0.9s ease forwards; }
+.animate-fade-in     { animation: fade-in 1s ease forwards; }
+.animate-marquee     { animation: marquee-scroll 28s linear infinite; }
+.animate-wa-pulse    { animation: pulse-whatsapp 2.5s infinite; }
 
 /* =====================================================
-   BUTTON STYLES
+   BUTTON SYSTEM
    ===================================================== */
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: linear-gradient(135deg, #2D5A35, #4A7A50);
-  color: white;
-  border-radius: 100px;
-  font-size: 0.95rem;
+  padding: 0.875rem 2.25rem;
+  background: #1F1F1F;
+  color: #F7F4EE;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid #1F1F1F;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
 }
-
 .btn-primary:hover {
+  background: #5E7A63;
+  border-color: #5E7A63;
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(45, 90, 53, 0.35);
+  box-shadow: 0 12px 32px rgba(94, 122, 99, 0.3);
 }
 
-.btn-secondary {
+.btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 2.25rem;
   background: transparent;
-  color: #2D5A35;
-  border: 1.5px solid #7A9E7E;
-  border-radius: 100px;
-  font-size: 0.95rem;
+  color: #1F1F1F;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid #1F1F1F;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
 }
-
-.btn-secondary:hover {
-  background: #2D5A35;
-  color: white;
-  border-color: #2D5A35;
+.btn-outline:hover {
+  background: #1F1F1F;
+  color: #F7F4EE;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(45, 90, 53, 0.2);
+}
+
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  background: #5E7A63;
+  color: #F7F4EE;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid #5E7A63;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-green:hover {
+  background: #3D5241;
+  border-color: #3D5241;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(94, 122, 99, 0.35);
 }
 
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 2.25rem;
   background: #25D366;
   color: white;
-  border-radius: 100px;
-  font-size: 0.95rem;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  animation: pulse-green 2.5s infinite;
+  animation: pulse-whatsapp 3s infinite;
 }
-
 .btn-whatsapp:hover {
   background: #128C7E;
   transform: translateY(-2px);

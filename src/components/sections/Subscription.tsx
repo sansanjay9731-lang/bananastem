@@ -1,138 +1,104 @@
 "use client";
 
-import { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Check } from "lucide-react";
 
 const plans = [
   {
-    id: "weekly-basic",
-    name: "Detox Starter",
-    frequency: "Weekly",
-    price: "₹349",
-    perDelivery: "₹349/week",
-    savings: "Save ₹120/month",
-    description: "Your first step toward a weekly wellness ritual",
-    items: ["500g fresh banana stem × 2", "1 juice-ready pack", "Free eco bag"],
-    color: "#7A9E7E",
-    highlight: false,
+    id: "trial",
+    name: "Discovery",
+    deliveries: "2 Deliveries / Month",
+    price: "449",
+    savings: "",
+    features: ["500g Fresh Pack per delivery", "Recipe guide included", "Cancel anytime"],
+    isPopular: false,
   },
   {
-    id: "weekly-family",
+    id: "routine",
+    name: "The Ritual",
+    deliveries: "4 Deliveries / Month",
+    price: "799",
+    savings: "Save 15%",
+    features: ["500g Fresh Pack per delivery", "Priority morning delivery", "Pause or skip weeks", "Free shipping"],
+    isPopular: true,
+  },
+  {
+    id: "family",
     name: "Family Wellness",
-    frequency: "Weekly",
-    price: "₹599",
-    perDelivery: "₹599/week",
-    savings: "Save ₹200/month",
-    description: "Whole family detox, every single week",
-    items: ["1kg family stem pack", "2 juice-ready packs", "Recipe card included", "Priority delivery"],
-    color: "#2D5A35",
-    highlight: true,
-    badge: "Most Popular",
+    deliveries: "4 Deliveries / Month",
+    price: "1399",
+    savings: "Save 25%",
+    features: ["1kg Family Pack per delivery", "Priority morning delivery", "Pause or skip weeks", "Free shipping", "Complimentary juice strainer"],
+    isPopular: false,
   },
-  {
-    id: "monthly-wellness",
-    name: "Monthly Box",
-    frequency: "Bi-weekly",
-    price: "₹999",
-    perDelivery: "₹499/delivery",
-    savings: "Save ₹340/month",
-    description: "For the truly committed wellness lifestyle",
-    items: ["1kg stem × 2 deliveries", "4 juice-ready packs", "Wellness guide PDF", "Dedicated support"],
-    color: "#4A7A50",
-    highlight: false,
-  },
-];
-
-const subscriptionBenefits = [
-  { icon: "🔄", text: "Flexible scheduling — weekly, bi-weekly" },
-  { icon: "📦", text: "Priority fresh stock allocation" },
-  { icon: "💚", text: "Subscriber-only pricing (up to 30% off)" },
-  { icon: "⏸️", text: "Pause or cancel anytime, no questions" },
-  { icon: "🚚", text: "Free delivery on all subscription orders" },
-  { icon: "📱", text: "WhatsApp delivery updates" },
 ];
 
 export default function Subscription() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <section
-      id="subscription"
-      className="section-base relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #1A3A20 0%, #2D5A35 60%, #3D6B43 100%)" }}
-    >
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle at 20% 80%, #A8C5AC 0%, transparent 50%), radial-gradient(circle at 80% 20%, #C9A84C 0%, transparent 50%)",
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-label mb-4 block" style={{ color: "#7A9E7E" }}>Subscription Plans</span>
-          <h2 className="text-headline mb-5 text-white">
-            Your Weekly
-            <br />
-            <span style={{ color: "#A8C5AC" }}>Wellness Ritual</span>
-          </h2>
-          <p className="text-body-lg" style={{ color: "#A8C5AC" }}>
-            Fresh detox delivered on autopilot. Never miss a week of gut-healing goodness.
-            Subscribe. Save. Thrive.
-          </p>
+    <section id="subscription" className="section-lg bg-[#F7F4EE]">
+      <div className="container-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+          <div className="lg:col-span-5 animate-fade-up">
+            <span className="text-label text-[#5E7A63] mb-4 block">Subscribe</span>
+            <h2 className="text-headline text-[#1F1F1F] mb-6">
+              The Native <br />
+              <span className="text-[#5E7A63] italic">Cleanse Box.</span>
+            </h2>
+            <p className="text-body-lg mb-8">
+              Wellness is a habit, not an event. Subscribe to get fresh banana stem delivered 
+              to your door every week. Farm to fridge, automatically.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {["Harvested & packed same day", "Flexible deliveries (pause anytime)", "Eco-friendly insulated packaging"].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-sm text-[#3A3A3A]">
+                  <Check size={16} className="text-[#5E7A63]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="lg:col-span-7 animate-fade-in relative aspect-[16/9] bg-[#E8E4DC]">
+            <Image
+              src="/subscription-box.png"
+              alt="Native Cleanse Subscription Box"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
-        {/* Plans */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {plans.map((plan) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {plans.map((plan, i) => (
+            <div 
               key={plan.id}
-              id={plan.id}
-              className="rounded-3xl p-7 flex flex-col transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                background: plan.highlight
-                  ? "rgba(255,255,255,0.12)"
-                  : "rgba(255,255,255,0.06)",
-                border: plan.highlight
-                  ? "1.5px solid rgba(168,197,172,0.5)"
-                  : "1px solid rgba(168,197,172,0.15)",
-                backdropFilter: "blur(20px)",
-              }}
+              className={`relative bg-white border p-8 card-lift ${
+                plan.isPopular ? "border-[#5E7A63] shadow-lg" : "border-[#D9C7AE]/50"
+              }`}
             >
-              {plan.badge && (
-                <span
-                  className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 self-start"
-                  style={{ background: "#C9A84C", color: "#1A3A20" }}
-                >
-                  {plan.badge}
-                </span>
+              {plan.isPopular && (
+                <div className="absolute -top-3 inset-x-0 flex justify-center">
+                  <span className="bg-[#5E7A63] text-white text-[0.65rem] uppercase tracking-widest py-1 px-3">
+                    Most Popular
+                  </span>
+                </div>
               )}
-
-              <span className="text-label mb-1" style={{ color: "#7A9E7E", fontSize: "0.65rem" }}>
-                {plan.frequency} delivery
-              </span>
-              <h3 className="font-semibold text-xl mb-1 text-white">{plan.name}</h3>
-              <p className="text-xs mb-5" style={{ color: "#7A9E7E" }}>{plan.description}</p>
-
-              <div className="mb-5">
-                <span className="font-bold text-3xl text-white">{plan.price}</span>
-                <span className="text-sm ml-1" style={{ color: "#7A9E7E" }}>/week</span>
-                <p className="text-xs mt-1" style={{ color: "#C9A84C" }}>{plan.savings}</p>
+              
+              <h3 className="font-serif text-2xl text-[#1F1F1F] mb-1">{plan.name}</h3>
+              <p className="text-caption mb-6">{plan.deliveries}</p>
+              
+              <div className="flex items-end gap-2 mb-8">
+                <span className="text-3xl font-light text-[#1F1F1F]">₹{plan.price}</span>
+                <span className="text-sm text-[#7A7A72] mb-1">/ mo</span>
+                {plan.savings && (
+                  <span className="ml-2 text-xs font-medium text-[#C79A72]">{plan.savings}</span>
+                )}
               </div>
 
-              <ul className="space-y-3 mb-8 flex-1">
-                {plan.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "#A8C5AC" }}>
-                    <Check size={14} className="mt-0.5 flex-shrink-0" style={{ color: plan.color }} />
-                    {item}
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-[#3A3A3A]">
+                    <Check size={14} className="text-[#5E7A63] mt-1 shrink-0" />
+                    {feature}
                   </li>
                 ))}
               </ul>
@@ -141,80 +107,12 @@ export default function Subscription() {
                 href={`https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20subscribe%20to%20the%20${encodeURIComponent(plan.name)}%20plan`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300"
-                style={{
-                  background: plan.highlight ? "#25D366" : "rgba(255,255,255,0.15)",
-                  color: "white",
-                  textDecoration: "none",
-                  border: plan.highlight ? "none" : "1px solid rgba(255,255,255,0.2)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-                }}
+                className={plan.isPopular ? "btn-green w-full justify-center" : "btn-outline w-full justify-center"}
               >
-                Subscribe via WhatsApp
-                <ArrowRight size={15} />
+                Choose Plan
               </a>
             </div>
           ))}
-        </div>
-
-        {/* Benefits bar */}
-        <div
-          className="rounded-3xl p-8 mb-16"
-          style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(168,197,172,0.15)" }}
-        >
-          <h3 className="text-center font-semibold text-lg text-white mb-8">
-            Every subscription includes
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {subscriptionBenefits.map((b) => (
-              <div key={b.text} className="flex items-center gap-3">
-                <span className="text-2xl">{b.icon}</span>
-                <span className="text-sm" style={{ color: "#A8C5AC" }}>{b.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Email lead capture */}
-        <div className="max-w-lg mx-auto text-center">
-          <p className="font-semibold text-white mb-2">Not ready to subscribe yet?</p>
-          <p className="text-sm mb-6" style={{ color: "#7A9E7E" }}>
-            Drop your email and get our free &ldquo;7-Day Banana Stem Detox Guide&rdquo; + first-order discount.
-          </p>
-          {submitted ? (
-            <div className="py-4 px-6 rounded-2xl text-center" style={{ background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.3)" }}>
-              <p className="text-white font-medium">🎉 Check your inbox! Your guide is on the way.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex gap-3">
-              <input
-                type="email"
-                id="subscription-email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="flex-1 px-5 py-3.5 rounded-xl text-sm outline-none"
-                style={{
-                  background: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(168,197,172,0.3)",
-                  color: "white",
-                }}
-              />
-              <button
-                type="submit"
-                className="btn-primary flex-shrink-0"
-                style={{ padding: "0.875rem 1.5rem" }}
-              >
-                Get Guide
-              </button>
-            </form>
-          )}
         </div>
       </div>
     </section>

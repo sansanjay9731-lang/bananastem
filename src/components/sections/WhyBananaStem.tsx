@@ -1,91 +1,154 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
+const timeline = [
+  {
+    era: "2000 BCE",
+    title: "Roots in Ayurveda",
+    body: "Siddha and Ayurvedic texts documented Vazhaithandu as a premier medicinal food for kidney health, urinary wellness, and digestive balance. Revered as 'nature's filter'.",
+  },
+  {
+    era: "Traditional Era",
+    title: "South Indian Kitchen Staple",
+    body: "Every grandmother's home had banana stem in the weekly menu. Banana stem kootu, poriyal, and moru kali were cooked in Tamil, Telugu, and Kannada households as a matter of routine.",
+  },
+  {
+    era: "The Modern Gap",
+    title: "Convenience Killed the Superfood",
+    body: "Urbanization created a painful irony: people moved to cities seeking better health, but lost access to traditional healing foods. Cleaning banana stem takes 45+ minutes — nobody has that time.",
+  },
+  {
+    era: "Today",
+    title: "We Solved It",
+    body: "Vazha Wellness does the cleaning, trimming, and prep for you. Ready-to-cook. Farm-fresh. Delivered to your home in Bangalore, Pune, and Mumbai. Tradition preserved. Convenience delivered.",
+  },
+];
+
+const nutritionFacts = [
+  { value: "2.6g", unit: "fiber per 100g", label: "Dietary Fiber" },
+  { value: "36", unit: "kcal per 100g", label: "Low Calories" },
+  { value: "High", unit: "potassium", label: "Potassium Rich" },
+  { value: "0%", unit: "preservatives", label: "Chemical Free" },
+];
+
 export default function WhyBananaStem() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const items = itemRefs.current;
+    items.forEach((item, i) => {
+      if (!item) return;
+      item.style.opacity = "0";
+      item.style.transform = i % 2 === 0 ? "translateX(-20px)" : "translateX(20px)";
+      item.style.transition = "all 0.8s cubic-bezier(0.4,0,0.2,1)";
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.style.opacity = "1";
+            el.style.transform = "translateX(0)";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    items.forEach((item) => { if (item) observer.observe(item); });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="why-banana-stem" className="section-base bg-[#1F1F1F] text-[#F7F4EE]">
-      <div className="container-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left: Visual */}
-          <div className="relative animate-fade-up">
-            <div className="aspect-square bg-[#2D2D2A] p-8 md:p-12 flex flex-col justify-between border border-[#5E7A63]/20 relative overflow-hidden">
-              {/* Top Text */}
-              <div className="relative z-10">
-                <span className="text-label text-[#AFC3B0] mb-4 block">The Forgotten Superfood</span>
-                <h3 className="text-headline text-[#F7F4EE] leading-tight">
-                  Why Did We <br />
-                  <span className="italic text-[#5E7A63]">Stop Eating It?</span>
-                </h3>
-              </div>
-              
-              {/* Text overlay bottom */}
-              <div className="relative z-10 mt-12 max-w-sm">
-                <p className="text-caption text-[#D9C7AE]">
-                  Banana stem was a weekly staple in Indian homes for centuries. 
-                  But modern life got busy. Sourcing it fresh became hard. Cleaning it 
-                  took too much time. So, we stopped.
-                </p>
-                <div className="mt-6 pt-6 border-t border-[#5E7A63]/30">
-                  <p className="font-serif text-xl italic text-[#AFC3B0]">
-                    We're bringing it back. Pre-cleaned, farm-fresh, and ready for your modern kitchen.
-                  </p>
-                </div>
-              </div>
+    <section id="why-banana-stem" style={{ background: "linear-gradient(180deg, #FDFAF5, #EDF4EE)" }}>
+      {/* Top wave */}
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "60px", display: "block" }}>
+        <path d="M0 0L480 30L960 10L1440 40V0H0Z" fill="#FDFAF5" />
+      </svg>
 
-              {/* Decorative graphic */}
-              <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-1/4 translate-y-1/4">
-                <svg width="400" height="400" viewBox="0 0 200 200" fill="none">
-                  <path d="M100 0 C150 0 200 50 200 100 C200 150 150 200 100 200 C50 200 0 150 0 100 C0 50 50 0 100 0 Z" stroke="#F7F4EE" strokeWidth="1" strokeDasharray="4 4" />
-                  <circle cx="100" cy="100" r="60" stroke="#5E7A63" strokeWidth="1" />
-                </svg>
-              </div>
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <span className="text-label mb-4 block" style={{ color: "#7A9E7E" }}>The Superfood Story</span>
+          <h2 className="text-headline mb-5" style={{ color: "#1A3A20" }}>
+            Why Banana Stem?
+            <br />
+            <span style={{ color: "#4A7A50" }}>Because Your Ancestors Knew.</span>
+          </h2>
+          <p className="text-body-lg" style={{ color: "#6B7280" }}>
+            Vazhaithandu isn&apos;t a trend. It&apos;s a 4,000-year-old healing food that modern 
+            nutrition science is just beginning to catch up to.
+          </p>
+        </div>
+
+        {/* Two-column: image + timeline */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* Left: Farm image */}
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden" style={{ boxShadow: "0 30px 70px rgba(45,90,53,0.15)" }}>
+              <Image
+                src="/farm.png"
+                alt="Banana plantation in South India — farm-fresh sourcing"
+                width={600}
+                height={500}
+                className="w-full h-auto"
+              />
+            </div>
+            {/* Floating stat */}
+            <div
+              className="absolute -bottom-6 -right-4 glass rounded-2xl p-5 shadow-xl"
+              style={{ border: "1px solid rgba(168,197,172,0.4)" }}
+            >
+              <p className="font-bold text-2xl" style={{ color: "#2D5A35" }}>4,000+</p>
+              <p className="text-xs mt-1" style={{ color: "#6B7280" }}>Years of Ayurvedic use</p>
             </div>
           </div>
 
-          {/* Right: Content Timeline */}
-          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-[#5E7A63] before:via-[#5E7A63]/50 before:to-transparent">
-              
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#5E7A63] bg-[#1F1F1F] text-[#AFC3B0] font-serif shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  01
+          {/* Right: Timeline */}
+          <div ref={sectionRef} className="space-y-8 pt-4">
+            {timeline.map((item, i) => (
+              <div
+                key={item.era}
+                ref={(el) => { itemRefs.current[i] = el; }}
+                className="flex gap-5"
+              >
+                <div className="flex flex-col items-center">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
+                    style={{ background: "linear-gradient(135deg, #4A7A50, #2D5A35)" }}
+                  >
+                    {i + 1}
+                  </div>
+                  {i < timeline.length - 1 && (
+                    <div className="w-px flex-1 mt-2" style={{ background: "linear-gradient(to bottom, #7A9E7E, transparent)", minHeight: "2rem" }} />
+                  )}
                 </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:pr-8 md:group-even:pl-8">
-                  <h4 className="text-xl font-serif text-[#F7F4EE] mb-2">The Past</h4>
-                  <p className="text-caption text-[#7A7A72]">
-                    Traditionally consumed weekly in South India to cleanse the gut, prevent kidney stones, and cool the body.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#5E7A63]/50 bg-[#1F1F1F] text-[#5E7A63] font-serif shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  02
-                </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:pr-8 md:group-even:pl-8">
-                  <h4 className="text-xl font-serif text-[#F7F4EE] mb-2">The Problem</h4>
-                  <p className="text-caption text-[#7A7A72]">
-                    Urbanization made fresh sourcing difficult. The tedious 30-minute process of removing fiber layers led to its decline.
-                  </p>
+                <div className="pb-6">
+                  <span className="text-label mb-1 block" style={{ color: "#7A9E7E", fontSize: "0.65rem" }}>{item.era}</span>
+                  <h3 className="font-semibold text-lg mb-2" style={{ color: "#1A3A20" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>{item.body}</p>
                 </div>
               </div>
-
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#5E7A63] text-[#F7F4EE] font-serif shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  03
-                </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:pr-8 md:group-even:pl-8">
-                  <h4 className="text-xl font-serif text-[#F7F4EE] mb-2">Stem Native</h4>
-                  <p className="text-caption text-[#D9C7AE]">
-                    We harvest at dawn, expertly clean the fibrous layers, and deliver it to you vacuum-sealed. Ready to juice or cook in seconds.
-                  </p>
-                </div>
-              </div>
-
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* Nutrition facts bar */}
+        <div
+          className="rounded-3xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8"
+          style={{ background: "linear-gradient(135deg, #2D5A35, #1A3A20)", boxShadow: "0 20px 60px rgba(45,90,53,0.25)" }}
+        >
+          {nutritionFacts.map((fact) => (
+            <div key={fact.label} className="text-center">
+              <p className="font-bold text-4xl mb-1 text-white">{fact.value}</p>
+              <p className="text-xs mb-2" style={{ color: "#A8C5AC" }}>{fact.unit}</p>
+              <p className="text-label" style={{ color: "#7A9E7E", fontSize: "0.65rem" }}>{fact.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

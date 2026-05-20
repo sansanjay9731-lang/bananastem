@@ -1,35 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Cormorant_Garamond } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#5E7A63",
+  themeColor: "#2D5A35",
 };
 
 export const metadata: Metadata = {
-  title: "Stem Native — Rooted In Wellness | Fresh Banana Stem Delivered",
+  title: "Vazha Wellness — Fresh Banana Stem Delivered | Vazhaithandu Online",
   description:
-    "Stem Native is India's premium wellness food brand reviving forgotten Indian superfoods. Farm-fresh, pre-cleaned banana stem (Vazhaithandu) delivered to your door in Bangalore, Pune & Mumbai. Daily detox. Gut wellness. Traditional nutrition, made modern.",
+    "India's premium fresh banana stem (Vazhaithandu) brand. Ready-to-cook, farm-fresh, cleaned banana stem packs delivered to your door in Bangalore, Pune & Mumbai. Gut health. Detox. Traditional Indian wellness.",
   keywords: [
-    "Stem Native",
     "banana stem online",
     "banana stem Bangalore",
     "vazhaithandu delivery",
@@ -37,40 +28,31 @@ export const metadata: Metadata = {
     "detox foods India",
     "traditional Indian superfoods",
     "high fiber foods",
-    "Indian wellness brand",
-    "fresh banana stem subscription",
-    "gut health foods India",
-    "Ayurvedic superfoods",
-    "banana stem powder",
-    "rooted in wellness",
+    "fresh banana stem pack",
+    "banana stem subscription",
+    "organic banana stem",
   ],
   openGraph: {
-    title: "Stem Native — India's Forgotten Superfood, Delivered Fresh",
+    title: "Vazha Wellness — India's Forgotten Superfood, Delivered Fresh",
     description:
-      "Premium banana stem packs. Farm fresh. Pre-cleaned. Delivered. Start your daily detox ritual with Stem Native.",
+      "Ready-to-cook banana stem packs. Farm fresh. Cleaned and delivered. Start your daily detox.",
     type: "website",
     locale: "en_IN",
-    siteName: "Stem Native",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="en-IN"
-      className={`${dmSans.variable} ${cormorant.variable} h-full scroll-smooth`}
-    >
-      <body
-        className="min-h-full flex flex-col antialiased"
-        style={{
-          fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
-          background: "#F7F4EE",
-          color: "#1F1F1F",
-        }}
-      >
+    <html lang="en-IN" className={`${outfit.variable} h-full scroll-smooth`}>
+      <body className="min-h-full flex flex-col antialiased" style={{ fontFamily: "var(--font-outfit), system-ui, sans-serif" }}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
